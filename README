@@ -2,40 +2,40 @@ NAME
     JSON::MultiValueOrdered - handle JSON like {"a":1, "a":2}
 
 SYNOPSIS
-      use Test::More tests => 4;
-      use JSON::MultiValueOrdered;
-  
-      my $j = JSON::MultiValueOrdered->new;
-      isa_ok $j, 'JSON::Tiny';
-  
-      my $data = $j->decode(<<'JSON');
-      {
-        "a": 1,
-        "b": 2,
-        "a": 3,
-        "b": 4
-      }
-      JSON
-  
-      # As you'd expect, for repeated values, the last value is used
-      is_deeply(
-        $data,
-        { a => 3, b => 4 },
-      );
-  
-      # But hashes within the structure are tied to Tie::Hash::MultiValueOrdered
-      is_deeply(
-        [ tied(%$data)->get('b') ],
-        [ 2, 4 ],
-      );
-  
-      # And the extra information from the tied hash is used when re-encoding
-      is(
-        $j->encode($data),
-        q({"a":1,"b":2,"a":3,"b":4}),
-      );
-  
-      done_testing;
+       use Test::More tests => 4;
+       use JSON::MultiValueOrdered;
+   
+       my $j = JSON::MultiValueOrdered->new;
+       isa_ok $j, 'JSON::Tiny';
+   
+       my $data = $j->decode(<<'JSON');
+       {
+          "a": 1,
+          "b": 2,
+          "a": 3,
+          "b": 4
+       }
+       JSON
+   
+       # As you'd expect, for repeated values, the last value is used
+       is_deeply(
+          $data,
+          { a => 3, b => 4 },
+        );
+   
+       # But hashes within the structure are tied to Tie::Hash::MultiValueOrdered
+       is_deeply(
+          [ tied(%$data)->get('b') ],
+          [ 2, 4 ],
+        );
+   
+       # And the extra information from the tied hash is used when re-encoding
+       is(
+          $j->encode($data),
+          q({"a":1,"b":2,"a":3,"b":4}),
+       );
+   
+       done_testing;
 
 DESCRIPTION
     The JSON specification allows keys to be repeated within objects. It
@@ -72,6 +72,15 @@ DESCRIPTION
     "false"
     "true"
 
+  Functions
+    "j(\@array)" / "j(\%hash)" / "j($bytes)"
+        Encode or decode JSON as applicable.
+
+        This function may be exported, but is not exported by default. You
+        may request to import it with a different name:
+
+           use JSON::MultiValueOrdered j => { -as => 'quick_json' };
+
 BUGS
     Please report any bugs to
     <http://rt.cpan.org/Dist/Display.html?Queue=JSON-MultiValueOrdered>.
@@ -85,7 +94,7 @@ AUTHOR
     Toby Inkster <tobyink@cpan.org>.
 
 COPYRIGHT AND LICENCE
-    This software is copyright (c) 2012 by Toby Inkster.
+    This software is copyright (c) 2012-2013 by Toby Inkster.
 
     This is free software; you can redistribute it and/or modify it under
     the same terms as the Perl 5 programming language system itself.

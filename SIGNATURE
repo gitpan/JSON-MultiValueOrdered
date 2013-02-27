@@ -1,5 +1,5 @@
 This file contains message digests of all files listed in MANIFEST,
-signed via the Module::Signature module, version 0.68.
+signed via the Module::Signature module, version 0.70.
 
 To verify the content in this distribution, first make sure you have
 Module::Signature installed, then type:
@@ -14,13 +14,14 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 765ec151561af1fc16d78bb2c88c0380103d0b2e Changes
-SHA1 1e2fd6b36d8e28e016e0415737074dc5639fe609 HACKING
-SHA1 cc087c3dd6e1b519c680e68cd0231735a68300a0 LICENSE
-SHA1 4c8dc281b74755ed11ead0ade1d246737bfe2d04 MANIFEST
-SHA1 5d889f0109aaf1b45363f3d1bef91c1281db3f8f META.yml
+SHA1 fb2db57e90b4c205a55a9a5e3bb76f86af1dce8f COPYRIGHT
+SHA1 9eec2028118db1d540a7a9044d243b14c6bb4341 Changes
+SHA1 58e47fed556f626572681c48158a3ecd44ce179d HACKING
+SHA1 937d452c5c4069f4cda9ffaf45a33f1eb5f060e8 LICENSE
+SHA1 5da65eff35cb9682eafe758671f118af2732453e MANIFEST
+SHA1 612d47a46bf1911dc4397990d899c0c724ac678d META.yml
 SHA1 74518b0d1ebd2f56058dd855058c3568d7bf44de Makefile.PL
-SHA1 f6038a0312503a7e2d04eebfc5ac25024b3d628d README
+SHA1 ee65ff50f87f2289bb259cf7c3038d9fceac0074 README
 SHA1 e23d01db811099448497b8b221df72e651afb5db examples/eg1.pl
 SHA1 06c410f05488c1612ed66b06d3a86b2580581e4a inc/Module/AutoInstall.pm
 SHA1 8a924add836b60fb23b25c8506d45945e02f42f4 inc/Module/Install.pm
@@ -42,21 +43,22 @@ SHA1 0e0eed2e69d9583081868cf4f220068d0a018568 inc/Scalar/Util.pm
 SHA1 feb933cefe2e3762e8322bd6071a2499f3440da1 inc/YAML/Tiny.pm
 SHA1 8105c0510a773b56840995fb4dd2dc64fe9ddaee inc/unicore/Name.pm
 SHA1 36df501c7c9b73c282c5174ed54d8283b2f2cbf2 inc/utf8.pm
-SHA1 e62ebc3995a0ef96c4b715a9cb5cc25ef886c891 lib/JSON/MultiValueOrdered.pm
-SHA1 896455239fab790fb6f4cf1bdeff27ee725b9dff lib/JSON/Tiny/Subclassable.pm
-SHA1 91da516a465b5514cf45042346f34281fd130b3a lib/Tie/Hash/MultiValueOrdered.pm
-SHA1 bef97849bb0b80fc071bda166d2be55d9cc6e4f7 meta/changes.pret
+SHA1 6bd8ec321ae3ba8a32d79256171f402755e23280 lib/JSON/MultiValueOrdered.pm
+SHA1 9cb9b237e97a72b1279d54e4c14f498f89b074e7 lib/JSON/Tiny/Subclassable.pm
+SHA1 467cf21ed01d284454e0b1ca1098b9bbd8932a17 lib/Tie/Hash/MultiValueOrdered.pm
+SHA1 a7eda2e98e2ce439178e525e694de27664daa5e4 meta/changes.pret
 SHA1 d7c9c12d950c8359bc75d100d0c2ce27a444657b meta/doap.pret
 SHA1 33c0bc2864aa65e545e4ba75915f6231c21e775f meta/makefile.pret
 SHA1 a151cff74b5f29c00381a14d4ec8726e3763b6b2 meta/people.pret
-SHA1 18d405e50fc9a6d77a6b586e50b2a463f790201e t/01basic.t
-SHA1 0a28f07eb949e10684efc111a97afebb7f9dbda1 t/02synopsis.t
-SHA1 593714e8405b54ed1f71e08877983f7b65772435 t/03pretty.t
-SHA1 b54aec4b93c67ea002f21e40c10d4c5c04f67e40 t/04hash.t
+SHA1 6cbe1c4a60a61dcc8e400eae3fedd6a2ce942d5e t/01basic.t
+SHA1 8a5fa58f373b47ad4e7658fb14351c48edb0283c t/02synopsis.t
+SHA1 b60b6f20cfac5261ae8b11cc2b9ec23972706ee1 t/03pretty.t
+SHA1 bbe3ad026f4db65e36a65a4e7e8c13754b10cbef t/04hash.t
+SHA1 aa8dd8f80f59baeeb53146bb824f27639c62eca0 t/05j.t
 -----BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.10 (GNU/Linux)
+Version: GnuPG v1.4.11 (GNU/Linux)
 
-iEYEARECAAYFAlCgEMgACgkQzr+BKGoqfTnBNACfQFO3BkScNyG5ykk1GVhHu97K
-QyYAoK7m9YDUMqVILGH5b4bv4aVAnly1
-=xaSi
+iEYEARECAAYFAlEuF8UACgkQzr+BKGoqfTlVngCbBbbzBZiotrV+QwuQHBu92dLx
+zqoAniln+O0BtYJ+H9oarRnQgAllN6hi
+=R0/D
 -----END PGP SIGNATURE-----

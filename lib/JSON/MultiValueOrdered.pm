@@ -7,7 +7,7 @@ use if $] < 5.010, 'UNIVERSAL::DOES';
 	package JSON::MultiValueOrdered;
 	
 	our $AUTHORITY = 'cpan:TOBYINK';
-	our $VERSION   = '0.002';
+	our $VERSION   = '0.003';
 	
 	use base qw(JSON::Tiny::Subclassable);
 	
@@ -61,6 +61,8 @@ use if $] < 5.010, 'UNIVERSAL::DOES';
 			return '{' . join(',', @pairs) . '}';
 		}
 	}
+	
+	__PACKAGE__->import('j');
 }
 
 1;
@@ -73,40 +75,40 @@ JSON::MultiValueOrdered - handle JSON like {"a":1, "a":2}
 
 =head1 SYNOPSIS
 
-  use Test::More tests => 4;
-  use JSON::MultiValueOrdered;
-  
-  my $j = JSON::MultiValueOrdered->new;
-  isa_ok $j, 'JSON::Tiny';
-  
-  my $data = $j->decode(<<'JSON');
-  {
-    "a": 1,
-    "b": 2,
-    "a": 3,
-    "b": 4
-  }
-  JSON
-  
-  # As you'd expect, for repeated values, the last value is used
-  is_deeply(
-    $data,
-    { a => 3, b => 4 },
-  );
-  
-  # But hashes within the structure are tied to Tie::Hash::MultiValueOrdered
-  is_deeply(
-    [ tied(%$data)->get('b') ],
-    [ 2, 4 ],
-  );
-  
-  # And the extra information from the tied hash is used when re-encoding
-  is(
-    $j->encode($data),
-    q({"a":1,"b":2,"a":3,"b":4}),
-  );
-  
-  done_testing;
+   use Test::More tests => 4;
+   use JSON::MultiValueOrdered;
+   
+   my $j = JSON::MultiValueOrdered->new;
+   isa_ok $j, 'JSON::Tiny';
+   
+   my $data = $j->decode(<<'JSON');
+   {
+      "a": 1,
+      "b": 2,
+      "a": 3,
+      "b": 4
+   }
+   JSON
+   
+   # As you'd expect, for repeated values, the last value is used
+   is_deeply(
+      $data,
+      { a => 3, b => 4 },
+    );
+   
+   # But hashes within the structure are tied to Tie::Hash::MultiValueOrdered
+   is_deeply(
+      [ tied(%$data)->get('b') ],
+      [ 2, 4 ],
+    );
+   
+   # And the extra information from the tied hash is used when re-encoding
+   is(
+      $j->encode($data),
+      q({"a":1,"b":2,"a":3,"b":4}),
+   );
+   
+   done_testing;
 
 =head1 DESCRIPTION
 
@@ -162,6 +164,21 @@ in the superclasses.
 
 =back
 
+=head2 Functions
+
+=over
+
+=item C<< j(\@array) >> / C<< j(\%hash) >> / C<< j($bytes) >>
+
+Encode or decode JSON as applicable.
+
+This function may be exported, but is not exported by default. You may
+request to import it with a different name:
+
+   use JSON::MultiValueOrdered j => { -as => 'quick_json' };
+
+=back
+
 =head1 BUGS
 
 Please report any bugs to
@@ -181,7 +198,7 @@ Toby Inkster E<lt>tobyink@cpan.orgE<gt>.
 
 =head1 COPYRIGHT AND LICENCE
 
-This software is copyright (c) 2012 by Toby Inkster.
+This software is copyright (c) 2012-2013 by Toby Inkster.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

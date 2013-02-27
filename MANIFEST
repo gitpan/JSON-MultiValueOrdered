@@ -1,4 +1,5 @@
 Changes
+COPYRIGHT
 examples/eg1.pl
 HACKING
 inc/Module/AutoInstall.pm
@@ -37,4 +38,5 @@ t/01basic.t
 t/02synopsis.t
 t/03pretty.t
 t/04hash.t
+t/05j.t
 SIGNATURE                                Public-key signature (added by MakeMaker)
