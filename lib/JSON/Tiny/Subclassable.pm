@@ -6,7 +6,7 @@ use warnings;
 	package JSON::Tiny::Subclassable;
 
 	our $AUTHORITY = 'cpan:TOBYINK';
-	our $VERSION   = '0.003';
+	our $VERSION   = '0.004';
 	our @ISA       = qw(JSON::Tiny);
 	
 	use B;
@@ -400,9 +400,8 @@ use warnings;
 		return 'null' unless defined $value;
 		
 		# Number
-		my $flags = B::svref_2object(\$value)->FLAGS;
-		return $value
-			if $flags & (B::SVp_IOK | B::SVp_NOK) && !($flags & B::SVp_POK);
+		return 0 + $value
+			if B::svref_2object(\$value)->FLAGS & (B::SVp_IOK | B::SVp_NOK);
 		
 		# String
 		return $self->_encode_string($value);

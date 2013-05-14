@@ -1,12 +1,14 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: JSON-MultiValueOrdered
-Upstream-Contact: Toby Inkster <tobyink@cpan.org>
+Upstream-Contact: David J. Oswald
 Source: https://metacpan.org/release/JSON-MultiValueOrdered
 
-Files: Changes
- HACKING
+Files: CONTRIBUTING
+ CREDITS
+ Changes
  LICENSE
  MANIFEST.SKIP
+ META.ttl
  Makefile.PL
  README
  examples/eg1.pl
@@ -33,18 +35,14 @@ Files: inc/Module/Install.pm
 Copyright: Copyright 2002 - 2012 Brian Ingerson, Audrey Tang and Adam Kennedy.
 License: GPL-1.0+ or Artistic-1.0
 
-Files: inc/unicore/Name.pm
- inc/utf8.pm
-Copyright: 1993-2012, Larry Wall and others
+Files: inc/Module/Install/Contributors.pm
+ t/05j.t
+Copyright: This software is copyright (c) 2013 by Toby Inkster.
 License: GPL-1.0+ or Artistic-1.0
 
 Files: inc/Module/Install/TrustMetaYml.pm
  inc/Module/Package/Dist/RDF.pm
 Copyright: This software is copyright (c) 2011-2012 by Toby Inkster.
-License: GPL-1.0+ or Artistic-1.0
-
-Files: t/05j.t
-Copyright: This software is copyright (c) 2013 by Toby Inkster.
 License: GPL-1.0+ or Artistic-1.0
 
 Files: inc/Module/Install/Makefile.pm
@@ -62,11 +60,6 @@ License: GPL-1.0+ or Artistic-1.0
 
 Files: inc/Module/Install/Base.pm
 Copyright: Copyright 2003, 2004 by Audrey Tang <autrijus@autrijus.org>.
-License: GPL-1.0+ or Artistic-1.0
-
-Files: inc/Scalar/Util.pm
-Copyright: Copyright (c) 1997-2007 Graham Barr <gbarr@pobox.com>. All rights reserved.
- Copyright (c) 1999 Tuomas J. Lukka <lukka@iki.fi>. All rights reserved.
 License: GPL-1.0+ or Artistic-1.0
 
 Files: inc/YAML/Tiny.pm

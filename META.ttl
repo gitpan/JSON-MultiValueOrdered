@@ -1,0 +1,132 @@
+@prefix cpan:  <http://purl.org/NET/cpan-uri/person/> .
+@prefix cpant: <http://purl.org/NET/cpan-uri/terms#> .
+@prefix dc:    <http://purl.org/dc/terms/> .
+@prefix dcs:   <http://ontologi.es/doap-changeset#> .
+@prefix dist:  <http://purl.org/NET/cpan-uri/dist/JSON-MultiValueOrdered/> .
+@prefix doap:  <http://usefulinc.com/ns/doap#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix nfo:   <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+dist:project
+	a                 doap:Project;
+	doap:name         "JSON-MultiValueOrdered";
+	cpant:perl_version_from [
+		a nfo:FileDataObject;
+		a nfo:SourceCode;
+		rdfs:label "JSON::MultiValueOrdered";
+		nfo:fileName "lib/JSON/MultiValueOrdered.pm";
+		nfo:programmingLanguage "Perl";
+	];
+	cpant:readme_from [
+		a nfo:FileDataObject;
+		a nfo:SourceCode;
+		rdfs:label "JSON::MultiValueOrdered";
+		nfo:fileName "lib/JSON/MultiValueOrdered.pm";
+		nfo:programmingLanguage "Perl";
+	];
+	cpant:test_requires "Test::More 0.61"^^cpant:dsWithVersion;
+	cpant:version_from [
+		a nfo:FileDataObject;
+		a nfo:SourceCode;
+		rdfs:label "JSON::MultiValueOrdered";
+		nfo:fileName "lib/JSON/MultiValueOrdered.pm";
+		nfo:programmingLanguage "Perl";
+	];
+	dc:contributor    cpan:tobyink;
+	doap:bug-database <http://rt.cpan.org/Dist/Display.html?Queue=JSON-MultiValueOrdered>;
+	doap:created      "2012-11-08"^^xsd:date;
+	doap:developer    cpan:davido;
+	doap:developer    cpan:tobyink;
+	doap:download-page <https://metacpan.org/release/JSON-MultiValueOrdered>;
+	doap:homepage     <https://metacpan.org/release/JSON-MultiValueOrdered>;
+	doap:license      <http://dev.perl.org/licenses/>;
+	doap:maintainer   cpan:tobyink;
+	doap:programming-language "Perl";
+	doap:release      dist:v_0-001;
+	doap:release      dist:v_0-002;
+	doap:release      dist:v_0-003;
+	doap:release      dist:v_0-004;
+	doap:repository   [
+		a doap:GitRepository;
+		doap:browse <https://github.com/tobyink/p5-json-multivalueordered>;
+	];
+	doap:shortdesc    "handle JSON like {\"a\":1, \"a\":2}".
+
+dist:v_0-001
+	a                 doap:Version;
+	rdfs:label        "Initial release";
+	dc:identifier     "JSON-MultiValueOrdered-0.001"^^xsd:string;
+	dc:issued         "2012-11-08"^^xsd:date;
+	dcs:released-by   cpan:tobyink;
+	doap:file-release <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/JSON-MultiValueOrdered-0.001.tar.gz>;
+	doap:revision     "0.001"^^xsd:string.
+
+dist:v_0-002
+	a                 doap:Version;
+	rdfs:label        "Perl 5.8 compatibility release";
+	dc:identifier     "JSON-MultiValueOrdered-0.002"^^xsd:string;
+	dc:issued         "2012-11-11"^^xsd:date;
+	dcs:changeset     [
+		dcs:item [
+			a dcs:Change;
+			rdfs:label "Require UNIVERSAL::DOES on Perl 5.8.";
+		];
+		dcs:item [
+			a dcs:Change;
+			rdfs:label "Avoid defined-or operator.";
+		];
+	];
+	dcs:released-by   cpan:tobyink;
+	doap:file-release <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/JSON-MultiValueOrdered-0.002.tar.gz>;
+	doap:revision     "0.002"^^xsd:string.
+
+dist:v_0-003
+	a                 doap:Version;
+	dc:identifier     "JSON-MultiValueOrdered-0.003"^^xsd:string;
+	dc:issued         "2013-02-27"^^xsd:date;
+	dcs:changeset     [
+		dcs:item [
+			a dcs:Addition;
+			rdfs:label "Implement 'j' function as supported by JSON::Tiny.";
+		];
+		dcs:item [
+			a dcs:Documentation;
+			rdfs:label "Document test suite.";
+		];
+	];
+	dcs:released-by   cpan:tobyink;
+	doap:file-release <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/JSON-MultiValueOrdered-0.003.tar.gz>;
+	doap:revision     "0.003"^^xsd:string.
+
+dist:v_0-004
+	a                 doap:Version;
+	dc:identifier     "JSON-MultiValueOrdered-0.004"^^xsd:string;
+	dc:issued         "2013-05-14"^^xsd:date;
+	dcs:changeset     [
+		dcs:item [
+			rdfs:label "Changed heuristics for number detection to better line up with user expectations.";
+			rdfs:comment "Mojolicious commit 9f75c27";
+		];
+	];
+	dcs:released-by   cpan:tobyink;
+	doap:file-release <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/JSON-MultiValueOrdered-0.004.tar.gz>;
+	doap:revision     "0.004"^^xsd:string.
+
+cpan:davido
+	a                 foaf:Person;
+	foaf:name         "David J. Oswald";
+	foaf:nick         "DAVIDO";
+	foaf:page         <https://metacpan.org/author/DAVIDO>.
+
+cpan:tobyink
+	a                 foaf:Person;
+	foaf:name         "Toby Inkster";
+	foaf:mbox         <mailto:tobyink@cpan.org>;
+	foaf:nick         "TOBYINK";
+	foaf:page         <https://metacpan.org/author/TOBYINK>.
+
+<http://dev.perl.org/licenses/>
+	dc:title          "the same terms as the perl 5 programming language system itself".
+

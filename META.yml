@@ -1,6 +1,7 @@
 ---
 abstract: "handle JSON like {\"a\":1, \"a\":2}"
 author:
+  - 'David J. Oswald'
   - 'Toby Inkster <tobyink@cpan.org>'
 build_requires:
   ExtUtils::MakeMaker: 6.59
@@ -29,5 +30,7 @@ resources:
   bugtracker: http://rt.cpan.org/Dist/Display.html?Queue=JSON-MultiValueOrdered
   homepage: https://metacpan.org/release/JSON-MultiValueOrdered
   license: http://dev.perl.org/licenses/
-  repository: https://bitbucket.org/tobyink/p5-json-multivalueordered
-version: 0.003
+  repository: https://github.com/tobyink/p5-json-multivalueordered
+version: 0.004
+x_contributors:
+  - 'David J. Oswald <davido@cpan.org>'
