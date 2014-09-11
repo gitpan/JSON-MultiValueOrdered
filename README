@@ -46,38 +46,38 @@ DESCRIPTION
     JSON::MultiValueOrdered is a subclass of JSON::Tiny which treats objects
     as ordered lists of key-value pairs, with duplicate keys allowed. It
     achieves this by returning all hashes as tied using
-    Tie::Hash::MultiValueOrdered. While these hashes behave like standard
-    Perl hashes (albeit while preserving the original order of the keys),
-    they provide a tied object interface allowing you to retrieve additional
-    values for each key.
+    Tie::Hash::MultiValueOrdered. While these hashes behave like standard Perl
+    hashes (albeit while preserving the original order of the keys), they
+    provide a tied object interface allowing you to retrieve additional values
+    for each key.
 
     JSON::MultiValueOrdered serialisation also serialises these additional
     values and preserves order.
 
     JSON::MultiValueOrdered is a subclass of JSON::Tiny::Subclassable and
-    JSON::Tiny, which is itself a fork of Mojo::JSON. Except where noted,
-    the methods listed below behave identically to the methods of the same
-    names in the superclasses.
+    JSON::Tiny, which is itself a fork of Mojo::JSON. Except where noted, the
+    methods listed below behave identically to the methods of the same names
+    in the superclasses.
 
   Constructor
-    "new(%attributes)"
+    `new(%attributes)`
 
   Attributes
-    "pretty"
-    "error"
+    `pretty`
+    `error`
 
   Methods
-    "decode($bytes)"
-    "encode($ref)"
-    "false"
-    "true"
+    `decode($bytes)`
+    `encode($ref)`
+    `false`
+    `true`
 
   Functions
-    "j(\@array)" / "j(\%hash)" / "j($bytes)"
+    `j(\@array)` / `j(\%hash)` / `j($bytes)`
         Encode or decode JSON as applicable.
 
-        This function may be exported, but is not exported by default. You
-        may request to import it with a different name:
+        This function may be exported, but is not exported by default. You may
+        request to import it with a different name:
 
            use JSON::MultiValueOrdered j => { -as => 'quick_json' };
 
@@ -96,8 +96,8 @@ AUTHOR
 COPYRIGHT AND LICENCE
     This software is copyright (c) 2012-2013 by Toby Inkster.
 
-    This is free software; you can redistribute it and/or modify it under
-    the same terms as the Perl 5 programming language system itself.
+    This is free software; you can redistribute it and/or modify it under the
+    same terms as the Perl 5 programming language system itself.
 
 DISCLAIMER OF WARRANTIES
     THIS PACKAGE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR IMPLIED
